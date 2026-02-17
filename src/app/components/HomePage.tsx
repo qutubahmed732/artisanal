@@ -4,6 +4,9 @@ import { ArrowUpRight, Menu, X, Github, Twitter, Linkedin } from 'lucide-react';
 import GridBackground from './GridBackground';
 import Philosophy from './Philosophy';
 
+import { LuGithub } from "react-icons/lu";
+import { FiTwitter, FiLinkedin } from "react-icons/fi";
+
 // const Gatekeeper = lazy(() => import('./Gatekeeper'));
 
 const App: React.FC = () => {
@@ -150,9 +153,9 @@ const App: React.FC = () => {
               Selective software development for those who value architectural purity and creative excellence.
             </p>
             <div className="flex gap-6">
-              <Github className="w-5 h-5 text-zinc-500 hover:text-white cursor-pointer transition-colors" />
-              <Twitter className="w-5 h-5 text-zinc-500 hover:text-white cursor-pointer transition-colors" />
-              <Linkedin className="w-5 h-5 text-zinc-500 hover:text-white cursor-pointer transition-colors" />
+              <LuGithub className="w-5 h-5 text-zinc-500 hover:text-white cursor-pointer transition-colors" />
+              <FiTwitter className="w-5 h-5 text-zinc-500 hover:text-white cursor-pointer transition-colors" />
+              <FiLinkedin className="w-5 h-5 text-zinc-500 hover:text-white cursor-pointer transition-colors" />
             </div>
           </div>
 
