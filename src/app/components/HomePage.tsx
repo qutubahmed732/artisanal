@@ -7,8 +7,6 @@ import Philosophy from './Philosophy';
 import { LuGithub } from "react-icons/lu";
 import { FiTwitter, FiLinkedin } from "react-icons/fi";
 
-// const Gatekeeper = lazy(() => import('./Gatekeeper'));
-
 const App: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
