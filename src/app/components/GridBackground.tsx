@@ -11,7 +11,7 @@ const GridBackground: React.FC = () => {
           backgroundSize: '40px 40px'
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
+      <div className="absolute inset-0 bg-linear-to-b from-black via-transparent to-black" />
     </div>
   );
 };
