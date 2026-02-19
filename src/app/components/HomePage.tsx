@@ -1,11 +1,26 @@
 "use client";
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import GridBackground from './GridBackground';
 import Philosophy from './Philosophy';
 
 
 const App: React.FC = () => {
+  const [bool, setBool] = useState(false);
+
+  useEffect(() => {
+    function scrollWindow() {
+      const isScrolled = window.scrollY > 150;
+      setBool(isScrolled);
+    }
+
+    window.addEventListener("scroll", scrollWindow);
+
+    return () => {
+      window.removeEventListener("scroll", scrollWindow);
+    };
+  }, []);
+
 
   return (
     <div className="min-h-screen selection:bg-indigo-500 selection:text-white">
@@ -18,12 +33,12 @@ const App: React.FC = () => {
             <span className="flex h-2 w-2 rounded-full bg-indigo-500 animate-pulse" />
             Active Capacity: 1 Slot Remaining
           </div>
-          
+
           <h1 className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.9] mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
             WE ARCHITECT<br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-zinc-200 via-white to-zinc-500">DIGITAL LEGACIES</span>
           </h1>
-          
+
           <p className="text-zinc-500 text-xl md:text-2xl max-w-2xl leading-relaxed mb-12 animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-200">
             A boutique software collective focusing on high-complexity systems and avant-garde digital experiences. We don't take projects for money; we take them for the challenge.
           </p>
@@ -40,7 +55,7 @@ const App: React.FC = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="hidden md:flex fixed bottom-10 left-auto right-6 items-center gap-4 text-zinc-600 mono text-xs uppercase tracking-widest animate-bounce">
+        <div className={`hidden ${bool ? "" : "md:flex"} fixed bottom-10 left-auto right-6 items-center gap-4 text-zinc-600 mono text-xs uppercase tracking-widest animate-bounce`}>
           <div className="w-px h-12 bg-zinc-800" />
           Scroll to Explore
         </div>

@@ -217,7 +217,7 @@ const Projects: React.FC = () => {
         {/* Projects Container */}
         <div
           ref={containerRef}
-          className="qutub h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth overscroll-y-contain md:overscroll-y-auto"
+          className="qutub h-dvh overflow-y-scroll snap-y snap-mandatory scroll-smooth overscroll-y-contain md:overscroll-y-auto"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', touchAction: 'pan-y' }}
         >
           <style>{`
@@ -230,7 +230,7 @@ const Projects: React.FC = () => {
             <section
               key={project.id}
               data-index={index}
-              className="h-screen snap-start snap-always flex items-center relative overflow-hidden"
+              className="h-dvh snap-start snap-always snap-mandatory flex items-center relative overflow-hidden"
             >
               {/* Background Gradient */}
               <div className="absolute inset-0 bg-linear-to-br from-indigo-950/30 via-zinc-950 to-purple-950/30" />
@@ -241,14 +241,14 @@ const Projects: React.FC = () => {
                 <div className="relative flex items-center justify-center p-12 bg-linear-to-br from-indigo-950/50 to-transparent">
                   {/* Large Letter Background */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-5">
-                    <span className="text-[40rem] font-black leading-none">
+                    <span className="text-[20rem] md:text-[40rem] font-black leading-none">
                       {project.title.charAt(0)}
                     </span>
                   </div>
 
                   {/* Project Number */}
                   <div className="absolute top-12 left-12">
-                    <span className="text-8xl font-black text-white/10 mono">
+                    <span className="text-5xl md:text-8xl font-black text-white/10 mono">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
@@ -287,13 +287,13 @@ const Projects: React.FC = () => {
                   </h2>
 
                   {/* Description */}
-                  <p className="text-zinc-400 text-lg md:text-xl leading-relaxed mb-6">
+                  <p className="text-zinc-400 text-lg md:text-xl leading-relaxed mb-6 hidden md:block">
                     {project.description}
                   </p>
 
                   {/* Long Description */}
                   {project.longDescription && (
-                    <p className="text-zinc-500 text-sm leading-relaxed mb-8">
+                    <p className="text-zinc-500 text-sm leading-relaxed mb-8 hidden md:block">
                       {project.longDescription}
                     </p>
                   )}
