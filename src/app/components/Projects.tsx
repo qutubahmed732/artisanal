@@ -282,7 +282,7 @@ const Projects: React.FC = () => {
                   </div>
 
                   {/* Title */}
-                  <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-none">
+                  <h2 className="text-3xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-none">
                     {project.title}
                   </h2>
 
@@ -324,7 +324,7 @@ const Projects: React.FC = () => {
                         rel="noopener noreferrer"
                         className="group flex items-center gap-2 px-6 py-3 bg-white text-black rounded-full font-bold hover:bg-indigo-500 hover:text-white transition-all"
                       >
-                        <span className="mono text-xs uppercase tracking-wider">View Demo</span>
+                        <span className="mono whitespace-nowrap text-xs uppercase tracking-wider">View Demo</span>
                         <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                       </a>
                     )}
@@ -336,7 +336,7 @@ const Projects: React.FC = () => {
                         className="group flex items-center gap-2 px-6 py-3 border border-white/20 rounded-full hover:bg-white/10 transition-all"
                       >
                         <Github className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                        <span className="mono text-xs uppercase tracking-wider">Source Code</span>
+                        <span className="mono whitespace-nowrap text-xs uppercase tracking-wider">Source Code</span>
                       </a>
                     )}
                   </div>
