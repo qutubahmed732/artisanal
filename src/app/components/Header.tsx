@@ -17,10 +17,10 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: 'Philosophy', href: '#philosophy' },
-    { name: 'The Craft', href: '#craft' },
+    // { name: 'Philosophy', href: '#philosophy' },
+    // { name: 'The Craft', href: '#craft' },
     { name: 'Projects', href: '/project' },
-    { name: 'Feasibility', href: '#gatekeeper' },
+    { name: 'Contact', href: '#gatekeeper' },
   ];
 
   const pathname = usePathname();
@@ -39,19 +39,19 @@ export default function Header() {
             <span className="mono font-bold tracking-tighter text-xl hidden sm:block">RTISANAL</span>
           </div>
 
-          <div className="hidden md:flex items-center gap-12">
+          <div className="hidden font-mono md:flex items-center gap-12">
             {navLinks.map(link => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="mono text-xs uppercase tracking-widest text-zinc-400 hover:text-white transition-colors"
+                className="font-mono text-xs uppercase tracking-widest text-zinc-400 hover:text-white transition-colors"
               >
                 {link.name}
               </Link>
             ))}
-            <button className="bg-white text-black px-6 py-2 rounded-full text-xs font-bold mono uppercase hover:bg-indigo-500 hover:text-white transition-all">
+            {/* <button className="bg-white text-black px-6 py-2 rounded-full text-xs font-bold mono uppercase hover:bg-indigo-500 hover:text-white transition-all">
               Initiate
-            </button>
+            </button> */}
           </div>
 
           <button

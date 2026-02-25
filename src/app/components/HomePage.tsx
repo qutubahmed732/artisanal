@@ -48,9 +48,9 @@ const App: React.FC = () => {
               Apply for Partnership
               <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </a>
-            <a href="#philosophy" className="flex items-center justify-center gap-3 border border-white/10 px-10 py-5 rounded-full font-bold text-lg hover:bg-white/5 transition-all">
+            {/* <a href="#philosophy" className="flex items-center justify-center gap-3 border border-white/10 px-10 py-5 rounded-full font-bold text-lg hover:bg-white/5 transition-all">
               Our Philosophy
-            </a>
+            </a> */}
           </div>
         </div>
 
