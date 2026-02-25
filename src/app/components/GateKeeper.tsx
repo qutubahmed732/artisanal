@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { ProjectAssessment } from '../../../types';
 import { Loader2, ArrowRight, ShieldCheck, ShieldAlert, Sparkles } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const Gatekeeper: React.FC = () => {
   const [input, setInput] = useState('');
@@ -9,13 +10,15 @@ const Gatekeeper: React.FC = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [assessment, setAssessment] = useState<ProjectAssessment | null>(null);
+  const router = useRouter();
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim() || loading) return;
 
     setLoading(true);
-    const response = await fetch("/api/message-router", {  
+    const response = await fetch("/api/message-router", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -27,11 +30,21 @@ const Gatekeeper: React.FC = () => {
       })
     });
 
-    const data = await response.json();
     setInput("")
     setName("")
     setEmail("")
-    setLoading(false);
+
+    const result = await response.json();
+    setAssessment(result);
+    if (result.status === 200) {
+      console.log("hogaya");
+      setLoading(false);
+      router.push("/thank-you-page")
+    }
+    if (result.status === 500) {
+      console.log("Nahi hua");
+      setLoading(false);
+    }
   };
 
   return (
@@ -53,7 +66,6 @@ const Gatekeeper: React.FC = () => {
         {!assessment ? (
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="w-full flex flex-col md:flex-row items-center gap-5">
-
               <div className='w-full flex flex-col gap-2'>
                 <label className='text-gray-400' htmlFor="name">Name</label>
                 <input className='bg-black/40 border border-white/10 rounded-md p-1 w-full focus:outline-none focus:border-indigo-500/50 transition-colors' type="text" name='name' id='name' value={name} onChange={(e) => setName(e.target.value)} />
@@ -102,7 +114,7 @@ const Gatekeeper: React.FC = () => {
                 <span className="text-zinc-500 text-xl font-medium tracking-widest uppercase">/ 100</span>
               </div>
               <p className="text-xl text-zinc-300 leading-relaxed italic">
-                "{assessment.reasoning}"
+                "{"Nahi hua submit"}"
               </p>
             </div>
 

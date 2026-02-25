@@ -12,8 +12,13 @@ export const POST = async (request: Request) => {
     return new NextResponse(JSON.stringify({
       message: "message has sent",
       feedback: newFeedback,
-    }), { status: 200 })
+      status: 200
+    }))
   } catch (error:any) {
-    return new NextResponse("Error in sending message" + error.message);
+    return new NextResponse(JSON.stringify({
+      message: "Error in sending message",
+      feedback: error.message,
+      status: 500
+    }));
   }
 }
