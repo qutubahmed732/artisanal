@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ExternalLink, Github, Filter, X, ChevronDown } from 'lucide-react';
 import { Project, ProjectCategory } from '../../../types';
 import { projects } from '../data/projects';
+import Link from 'next/link';
 
 const Projects: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>(ProjectCategory.ALL);
@@ -254,11 +255,11 @@ const Projects: React.FC = () => {
                   </div>
 
                   {/* Featured Badge */}
-                  {project.featured && (
+                  {/* {project.featured && (
                     <div className="absolute top-12 right-12 px-4 py-2 bg-indigo-500 text-white text-xs mono uppercase tracking-wider rounded-full">
                       Featured
                     </div>
-                  )}
+                  )} */}
 
                   {/* Decorative Elements */}
                   <div className="relative">
@@ -328,8 +329,8 @@ const Projects: React.FC = () => {
                         <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                       </a>
                     )}
-                    {project.githubUrl && (
-                      <a
+                    {/* {project.githubUrl && (
+                      <Link
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -337,8 +338,8 @@ const Projects: React.FC = () => {
                       >
                         <Github className="w-4 h-4 group-hover:scale-110 transition-transform" />
                         <span className="mono whitespace-nowrap text-xs uppercase tracking-wider">Source Code</span>
-                      </a>
-                    )}
+                      </Link>
+                    )} */}
                   </div>
                 </div>
               </div>

@@ -3,6 +3,7 @@ import React, { Suspense, useEffect, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import GridBackground from './GridBackground';
 import Philosophy from './Philosophy';
+import Gatekeeper from './GateKeeper';
 
 
 const App: React.FC = () => {
@@ -97,7 +98,7 @@ const App: React.FC = () => {
       </section>
 
       <Suspense fallback={<section id="gatekeeper" className="py-24 px-6 max-w-4xl mx-auto relative z-10"><div className="border border-white/10 bg-white/2 p-8 md:p-12 rounded-2xl animate-pulse h-64" /></section>}>
-        {/* <Gatekeeper /> */}
+        <Gatekeeper />
       </Suspense>
     </div>
   );
