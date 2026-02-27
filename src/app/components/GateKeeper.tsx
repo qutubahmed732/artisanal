@@ -36,13 +36,11 @@ const Gatekeeper: React.FC = () => {
 
     const result = await response.json();
     setAssessment(result);
-    if (result.status === 200) {
-      console.log("hogaya");
+    if (result.status === 200) {  
       setLoading(false);
       router.push("/thank-you-page")
     }
     if (result.status === 500) {
-      console.log("Nahi hua");
       setLoading(false);
     }
   };
@@ -67,12 +65,10 @@ const Gatekeeper: React.FC = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="w-full flex flex-col md:flex-row items-center gap-5">
               <div className='w-full flex flex-col gap-2'>
-                <label className='text-gray-400' htmlFor="name">Name</label>
-                <input className='bg-black/40 border border-white/10 rounded-md p-1 w-full focus:outline-none focus:border-indigo-500/50 transition-colors' type="text" name='name' id='name' value={name} onChange={(e) => setName(e.target.value)} />
+                <input className='bg-black/40 border border-white/10 rounded-md p-1 w-full focus:outline-none focus:border-indigo-500/50 transition-colors pl-3 placeholder:text-zinc-600' type="text" placeholder='Name' name='name' id='name' value={name} onChange={(e) => setName(e.target.value)} />
               </div>
               <div className='w-full flex flex-col gap-2'>
-                <label className='text-gray-400' htmlFor="email">Email</label>
-                <input className='bg-black/40 border border-white/10 rounded-md p-1 w-full focus:outline-none focus:border-indigo-500/50 transition-colors' type="email" name='email' id='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                <input className='bg-black/40 border border-white/10 rounded-md p-1 w-full focus:outline-none focus:border-indigo-500/50 transition-colors pl-3 placeholder:text-zinc-600' type="email" placeholder='Email' name='email' id='email' value={email} onChange={(e) => setEmail(e.target.value)} />
               </div>
             </div>
             <textarea
@@ -114,7 +110,7 @@ const Gatekeeper: React.FC = () => {
                 <span className="text-zinc-500 text-xl font-medium tracking-widest uppercase">/ 100</span>
               </div>
               <p className="text-xl text-zinc-300 leading-relaxed italic">
-                "{"Nahi hua submit"}"
+                "{"Not Submit"}"
               </p>
             </div>
 

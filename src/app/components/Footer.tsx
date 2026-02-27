@@ -1,11 +1,16 @@
 "use client";
 import { LuGithub } from "react-icons/lu";
 import { FiTwitter, FiLinkedin } from "react-icons/fi";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  let position = false;
+
+  const pathname = usePathname();
+  if (pathname === "/project") { position = true };
 
   return (
-    <footer className="py-24 px-6 border-t border-white/5 relative z-20">
+    <footer className={`${position ? "hidden" : "block"} py-24 px-6 border-t border-white/5 relative z-20`}>
       <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2 mb-8">
